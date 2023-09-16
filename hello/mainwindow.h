@@ -21,8 +21,7 @@ public slots:
     void addClass();
     void groups();
     void save();
-    void load();
-
+    void displayNames();
 
 private:
     Ui::MainWindow *ui;

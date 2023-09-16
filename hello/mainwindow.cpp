@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->addClass_btn, SIGNAL(clicked()), this, SLOT(addClass()));
     connect(ui->groups_btn, SIGNAL(clicked()), this, SLOT(groups()));
     connect(ui->save_btn, SIGNAL(clicked()), this, SLOT(save()));
-    connect(ui->load_btn, SIGNAL(clicked()), this, SLOT(load()));
+    connect(ui->classes_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNames()));
 
     QString projectDir = QCoreApplication::applicationDirPath();
     QString classesDir = projectDir + "/Classes";
@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     foreach (const QString &fileName, fileNames) {
         QString choppedFileName = fileName;
         choppedFileName.chop(4);
-        ui->listWidget->addItem(choppedFileName);
+        ui->classes_list->addItem(choppedFileName);
     }
 
 }
@@ -88,21 +88,19 @@ void MainWindow::save(){
     outStream.close();
 }
 
-void MainWindow::load(){
+void MainWindow::displayNames(){
+    QString className = ui->classes_list->currentItem()->text();
     QString projectDir = QCoreApplication::applicationDirPath();
-    QString classesDir = projectDir + "/Classes/poo.txt";
+    QString classesDir = projectDir + "/Classes/" + className + ".txt";
     QFile file(classesDir);
     QTextStream in(&file);
 
     file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     QString fileContent = in.readAll();
-    ui->outputText_txt->setPlainText(fileContent);
+    ui->names_list->setPlainText(fileContent);
 
     file.close();
-
-
-
 }
 
 

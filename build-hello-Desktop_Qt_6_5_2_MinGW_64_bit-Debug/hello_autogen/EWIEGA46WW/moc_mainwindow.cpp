@@ -45,7 +45,7 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "addClass",
     "groups",
     "save",
-    "load"
+    "displayNames"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
@@ -57,7 +57,7 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata4[9];
     char stringdata5[7];
     char stringdata6[5];
-    char stringdata7[5];
+    char stringdata7[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -70,7 +70,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(24, 8),  // "addClass"
         QT_MOC_LITERAL(33, 6),  // "groups"
         QT_MOC_LITERAL(40, 4),  // "save"
-        QT_MOC_LITERAL(45, 4)   // "load"
+        QT_MOC_LITERAL(45, 12)   // "displayNames"
     },
     "MainWindow",
     "clear",
@@ -79,7 +79,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "addClass",
     "groups",
     "save",
-    "load"
+    "displayNames"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -136,7 +136,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'save'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'load'
+        // method 'displayNames'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -153,7 +153,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->addClass(); break;
         case 3: _t->groups(); break;
         case 4: _t->save(); break;
-        case 5: _t->load(); break;
+        case 5: _t->displayNames(); break;
         default: ;
         }
     }

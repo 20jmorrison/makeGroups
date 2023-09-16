@@ -16,7 +16,9 @@
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
@@ -36,10 +38,13 @@ public:
     QPushButton *enter_btn;
     QPushButton *save_btn;
     QLineEdit *className_txt;
-    QTextEdit *outputText_txt;
-    QPushButton *load_btn;
     QWidget *page_2;
-    QListWidget *listWidget;
+    QListWidget *classes_list;
+    QLabel *label_2;
+    QPlainTextEdit *names_list;
+    QLabel *label_3;
+    QSpinBox *spinBox;
+    QLabel *label_4;
     QPushButton *groups_btn;
     QPushButton *addClass_btn;
     QMenuBar *menubar;
@@ -76,18 +81,28 @@ public:
         className_txt = new QLineEdit(page);
         className_txt->setObjectName("className_txt");
         className_txt->setGeometry(QRect(30, 380, 113, 24));
-        outputText_txt = new QTextEdit(page);
-        outputText_txt->setObjectName("outputText_txt");
-        outputText_txt->setGeometry(QRect(360, 40, 281, 331));
-        load_btn = new QPushButton(page);
-        load_btn->setObjectName("load_btn");
-        load_btn->setGeometry(QRect(610, 10, 80, 24));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
-        listWidget = new QListWidget(page_2);
-        listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(90, 80, 256, 192));
+        classes_list = new QListWidget(page_2);
+        classes_list->setObjectName("classes_list");
+        classes_list->setGeometry(QRect(90, 80, 191, 271));
+        classes_list->setEditTriggers(QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(90, 60, 61, 21));
+        names_list = new QPlainTextEdit(page_2);
+        names_list->setObjectName("names_list");
+        names_list->setGeometry(QRect(290, 80, 181, 271));
+        label_3 = new QLabel(page_2);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(290, 60, 81, 16));
+        spinBox = new QSpinBox(page_2);
+        spinBox->setObjectName("spinBox");
+        spinBox->setGeometry(QRect(480, 80, 71, 51));
+        label_4 = new QLabel(page_2);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(480, 60, 71, 16));
         stackedWidget->addWidget(page_2);
         groups_btn = new QPushButton(centralwidget);
         groups_btn->setObjectName("groups_btn");
@@ -106,7 +121,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -119,7 +134,9 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Input Raw Text", nullptr));
         enter_btn->setText(QCoreApplication::translate("MainWindow", "Enter", nullptr));
         save_btn->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        load_btn->setText(QCoreApplication::translate("MainWindow", "load", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Select Class", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Names on File", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "# Groups", nullptr));
         groups_btn->setText(QCoreApplication::translate("MainWindow", "Groups", nullptr));
         addClass_btn->setText(QCoreApplication::translate("MainWindow", "Add Class", nullptr));
     } // retranslateUi
