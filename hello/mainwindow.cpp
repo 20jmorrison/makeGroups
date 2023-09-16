@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(ui->clear_btn, SIGNAL(clicked()), this, SLOT(clear()));
     connect(ui->enter_btn, SIGNAL(clicked()), this, SLOT(enter()));
+    connect(ui->addClass_btn, SIGNAL(clicked()), this, SLOT(addClass()));
+    connect(ui->groups_btn, SIGNAL(clicked()), this, SLOT(groups()));
 
 
 
@@ -47,9 +49,14 @@ void MainWindow::enter(){
 }
 
 
+void MainWindow::addClass(){
+    ui->stackedWidget->setCurrentIndex(0);
+}
 
+void MainWindow::groups(){
+    ui->stackedWidget->setCurrentIndex(1);
 
-
+}
 
 
 

@@ -18,6 +18,8 @@ public:
 public slots:
     void clear();
     void enter();
+    void addClass();
+    void groups();
 
 
 private:

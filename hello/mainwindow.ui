@@ -14,86 +14,131 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="inputText_txt">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>60</y>
-      <width>281</width>
-      <height>331</height>
+      <x>-10</x>
+      <y>30</y>
+      <width>811</width>
+      <height>551</height>
      </rect>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QTextEdit" name="inputText_txt">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>281</width>
+        <height>331</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_btn">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="outputText_txt">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>281</width>
+        <height>331</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Input Raw Text</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="enter_btn">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>10</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="save_btn">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>380</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="className_txt">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>380</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2"/>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="groups_btn">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>30</y>
-      <width>101</width>
+      <x>0</x>
+      <y>0</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Input Raw Text</string>
+     <string>Groups</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="clear_btn">
+   <widget class="QPushButton" name="addClass_btn">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>30</y>
-      <width>80</width>
-      <height>24</height>
+      <x>90</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="enter_btn">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>30</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Enter</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="save_btn">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>400</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="className_txt">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>400</y>
-      <width>113</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="outputText_txt">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>60</y>
-      <width>281</width>
-      <height>331</height>
-     </rect>
+     <string>Add Class</string>
     </property>
    </widget>
   </widget>
