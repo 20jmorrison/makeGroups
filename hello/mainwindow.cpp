@@ -3,6 +3,11 @@
 #include <vector>
 #include <QRegularExpression>
 #include <QStringList>
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <QDir>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -14,8 +19,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->enter_btn, SIGNAL(clicked()), this, SLOT(enter()));
     connect(ui->addClass_btn, SIGNAL(clicked()), this, SLOT(addClass()));
     connect(ui->groups_btn, SIGNAL(clicked()), this, SLOT(groups()));
+    connect(ui->save_btn, SIGNAL(clicked()), this, SLOT(save()));
+    connect(ui->load_btn, SIGNAL(clicked()), this, SLOT(load()));
 
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes";
+    QDir directory(classesDir);
+    QStringList fileNames = directory.entryList(QDir::Files);
 
+    foreach (const QString &fileName, fileNames) {
+        QString choppedFileName = fileName;
+        choppedFileName.chop(4);
+        ui->listWidget->addItem(choppedFileName);
+    }
 
 }
 
@@ -45,7 +61,7 @@ void MainWindow::enter(){
     }
 
     QString textToDisplay = firstNames.join("\n");
-    ui->outputText_txt->setPlainText(textToDisplay);
+    ui->inputText_txt->setPlainText(textToDisplay);
 }
 
 
@@ -55,6 +71,37 @@ void MainWindow::addClass(){
 
 void MainWindow::groups(){
     ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::save(){
+
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes/";
+    QDir().mkpath(classesDir);
+
+    std::ofstream outStream;
+    std::string fileName = classesDir.toStdString();
+    fileName += ui->className_txt->text().toStdString() + ".txt";
+    outStream.open(fileName, std::ios::app);
+    outStream << ui->inputText_txt->toPlainText().toStdString();
+    outStream.close();
+}
+
+void MainWindow::load(){
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes/poo.txt";
+    QFile file(classesDir);
+    QTextStream in(&file);
+
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    QString fileContent = in.readAll();
+    ui->outputText_txt->setPlainText(fileContent);
+
+    file.close();
+
+
 
 }
 

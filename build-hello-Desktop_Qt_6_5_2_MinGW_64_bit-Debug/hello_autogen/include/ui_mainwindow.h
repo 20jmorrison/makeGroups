@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -31,12 +32,14 @@ public:
     QWidget *page;
     QTextEdit *inputText_txt;
     QPushButton *clear_btn;
-    QTextEdit *outputText_txt;
     QLabel *label;
     QPushButton *enter_btn;
     QPushButton *save_btn;
     QLineEdit *className_txt;
+    QTextEdit *outputText_txt;
+    QPushButton *load_btn;
     QWidget *page_2;
+    QListWidget *listWidget;
     QPushButton *groups_btn;
     QPushButton *addClass_btn;
     QMenuBar *menubar;
@@ -61,9 +64,6 @@ public:
         clear_btn = new QPushButton(page);
         clear_btn->setObjectName("clear_btn");
         clear_btn->setGeometry(QRect(130, 10, 80, 24));
-        outputText_txt = new QTextEdit(page);
-        outputText_txt->setObjectName("outputText_txt");
-        outputText_txt->setGeometry(QRect(340, 40, 281, 331));
         label = new QLabel(page);
         label->setObjectName("label");
         label->setGeometry(QRect(30, 10, 101, 31));
@@ -76,9 +76,18 @@ public:
         className_txt = new QLineEdit(page);
         className_txt->setObjectName("className_txt");
         className_txt->setGeometry(QRect(30, 380, 113, 24));
+        outputText_txt = new QTextEdit(page);
+        outputText_txt->setObjectName("outputText_txt");
+        outputText_txt->setGeometry(QRect(360, 40, 281, 331));
+        load_btn = new QPushButton(page);
+        load_btn->setObjectName("load_btn");
+        load_btn->setGeometry(QRect(610, 10, 80, 24));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
+        listWidget = new QListWidget(page_2);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(90, 80, 256, 192));
         stackedWidget->addWidget(page_2);
         groups_btn = new QPushButton(centralwidget);
         groups_btn->setObjectName("groups_btn");
@@ -97,7 +106,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -110,6 +119,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Input Raw Text", nullptr));
         enter_btn->setText(QCoreApplication::translate("MainWindow", "Enter", nullptr));
         save_btn->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        load_btn->setText(QCoreApplication::translate("MainWindow", "load", nullptr));
         groups_btn->setText(QCoreApplication::translate("MainWindow", "Groups", nullptr));
         addClass_btn->setText(QCoreApplication::translate("MainWindow", "Add Class", nullptr));
     } // retranslateUi

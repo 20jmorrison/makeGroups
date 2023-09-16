@@ -20,6 +20,8 @@ public slots:
     void enter();
     void addClass();
     void groups();
+    void save();
+    void load();
 
 
 private:
