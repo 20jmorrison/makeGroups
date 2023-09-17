@@ -42,22 +42,26 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "clear",
     "",
     "enter",
-    "addClass",
+    "manageClasses",
     "groups",
     "save",
-    "displayNames"
+    "displayNames",
+    "displayNamesInEditor",
+    "saveChanges"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[20];
     char stringdata0[11];
     char stringdata1[6];
     char stringdata2[1];
     char stringdata3[6];
-    char stringdata4[9];
+    char stringdata4[14];
     char stringdata5[7];
     char stringdata6[5];
     char stringdata7[13];
+    char stringdata8[21];
+    char stringdata9[12];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -67,19 +71,23 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(11, 5),  // "clear"
         QT_MOC_LITERAL(17, 0),  // ""
         QT_MOC_LITERAL(18, 5),  // "enter"
-        QT_MOC_LITERAL(24, 8),  // "addClass"
-        QT_MOC_LITERAL(33, 6),  // "groups"
-        QT_MOC_LITERAL(40, 4),  // "save"
-        QT_MOC_LITERAL(45, 12)   // "displayNames"
+        QT_MOC_LITERAL(24, 13),  // "manageClasses"
+        QT_MOC_LITERAL(38, 6),  // "groups"
+        QT_MOC_LITERAL(45, 4),  // "save"
+        QT_MOC_LITERAL(50, 12),  // "displayNames"
+        QT_MOC_LITERAL(63, 20),  // "displayNamesInEditor"
+        QT_MOC_LITERAL(84, 11)   // "saveChanges"
     },
     "MainWindow",
     "clear",
     "",
     "enter",
-    "addClass",
+    "manageClasses",
     "groups",
     "save",
-    "displayNames"
+    "displayNames",
+    "displayNamesInEditor",
+    "saveChanges"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -91,7 +99,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -99,14 +107,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x0a,    1 /* Public */,
-       3,    0,   51,    2, 0x0a,    2 /* Public */,
-       4,    0,   52,    2, 0x0a,    3 /* Public */,
-       5,    0,   53,    2, 0x0a,    4 /* Public */,
-       6,    0,   54,    2, 0x0a,    5 /* Public */,
-       7,    0,   55,    2, 0x0a,    6 /* Public */,
+       1,    0,   62,    2, 0x0a,    1 /* Public */,
+       3,    0,   63,    2, 0x0a,    2 /* Public */,
+       4,    0,   64,    2, 0x0a,    3 /* Public */,
+       5,    0,   65,    2, 0x0a,    4 /* Public */,
+       6,    0,   66,    2, 0x0a,    5 /* Public */,
+       7,    0,   67,    2, 0x0a,    6 /* Public */,
+       8,    0,   68,    2, 0x0a,    7 /* Public */,
+       9,    0,   69,    2, 0x0a,    8 /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -130,13 +142,17 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'enter'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'addClass'
+        // method 'manageClasses'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'groups'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'save'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'displayNames'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'displayNamesInEditor'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'saveChanges'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -150,10 +166,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->clear(); break;
         case 1: _t->enter(); break;
-        case 2: _t->addClass(); break;
+        case 2: _t->manageClasses(); break;
         case 3: _t->groups(); break;
         case 4: _t->save(); break;
         case 5: _t->displayNames(); break;
+        case 6: _t->displayNamesInEditor(); break;
+        case 7: _t->saveChanges(); break;
         default: ;
         }
     }
@@ -179,13 +197,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 8;
     }
     return _id;
 }

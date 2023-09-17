@@ -18,10 +18,12 @@ public:
 public slots:
     void clear();
     void enter();
-    void addClass();
+    void manageClasses();
     void groups();
     void save();
     void displayNames();
+    void displayNamesInEditor();
+    void saveChanges();
 
 private:
     Ui::MainWindow *ui;

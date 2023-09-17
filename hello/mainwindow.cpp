@@ -17,10 +17,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(ui->clear_btn, SIGNAL(clicked()), this, SLOT(clear()));
     connect(ui->enter_btn, SIGNAL(clicked()), this, SLOT(enter()));
-    connect(ui->addClass_btn, SIGNAL(clicked()), this, SLOT(addClass()));
+    connect(ui->manageClasses_btn, SIGNAL(clicked()), this, SLOT(manageClasses()));
     connect(ui->groups_btn, SIGNAL(clicked()), this, SLOT(groups()));
     connect(ui->save_btn, SIGNAL(clicked()), this, SLOT(save()));
     connect(ui->classes_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNames()));
+    connect(ui->classes_list_2, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNamesInEditor()));
+    connect(ui->saveChanges_btn, SIGNAL(clicked()), this, SLOT(saveChanges()));
 
     QString projectDir = QCoreApplication::applicationDirPath();
     QString classesDir = projectDir + "/Classes";
@@ -31,8 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
         QString choppedFileName = fileName;
         choppedFileName.chop(4);
         ui->classes_list->addItem(choppedFileName);
+        ui->classes_list_2->addItem(choppedFileName);
+
     }
 
+    ui->className_txt->setPlaceholderText("Enter Class Name...");
+    ui->inputText_txt->setPlaceholderText("Paste Classlist Here...");
 }
 
 MainWindow::~MainWindow()
@@ -65,7 +71,7 @@ void MainWindow::enter(){
 }
 
 
-void MainWindow::addClass(){
+void MainWindow::manageClasses(){
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -103,5 +109,31 @@ void MainWindow::displayNames(){
     file.close();
 }
 
+void MainWindow::displayNamesInEditor(){
+    QString className = ui->classes_list_2->currentItem()->text();
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes/" + className + ".txt";
+    QFile file(classesDir);
+    QTextStream in(&file);
 
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    QString fileContent = in.readAll();
+    ui->names_list_2->setPlainText(fileContent);
+
+    file.close();
+}
+
+void MainWindow::saveChanges(){
+
+    QString className = ui->classes_list_2->currentItem()->text();
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes/" + className + ".txt";
+
+    std::ofstream outStream;
+    std::string fileName = classesDir.toStdString();
+    outStream.open(fileName, std::ofstream::out | std::ofstream::trunc);
+    outStream << ui->names_list_2->toPlainText().toStdString();
+    outStream.close();
+}
 
