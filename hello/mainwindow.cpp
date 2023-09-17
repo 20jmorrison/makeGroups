@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->className_txt->setPlaceholderText("Enter Class Name...");
     ui->inputText_txt->setPlaceholderText("Paste Classlist Here...");
 
-    ui->groupsTable_tbl->setRowCount(15);
+    ui->groupsTable_tbl->setRowCount(0);
     ui->groupsTable_tbl->setColumnCount(1);
 }
 
@@ -68,10 +68,14 @@ void MainWindow::enter(){
 
 void MainWindow::manageClasses(){
     ui->stackedWidget->setCurrentIndex(0);
+    ui->manageClasses_btn->setStyleSheet("background-color: grey");
+    ui->groups_btn->setStyleSheet("");
 }
 
 void MainWindow::groups(){
     ui->stackedWidget->setCurrentIndex(1);
+    ui->manageClasses_btn->setStyleSheet("");
+    ui->groups_btn->setStyleSheet("background-color: grey");
 
 }
 
@@ -167,6 +171,8 @@ void MainWindow::makeGroups(){
     }
 
     int numGroups = ui->spinBox->value();
+    ui->groupsTable_tbl->setRowCount(numGroups);
+
     int groupSize = numPeople / numGroups;
     int numOversizedGroups = numPeople % numGroups;
     int currGroupSize;

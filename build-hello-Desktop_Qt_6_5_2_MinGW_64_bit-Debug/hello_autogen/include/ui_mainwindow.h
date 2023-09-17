@@ -63,12 +63,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(775, 617);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(-10, 30, 811, 551));
+        stackedWidget->setGeometry(QRect(-30, 30, 821, 631));
         stackedWidget->setFrameShape(QFrame::Box);
         page = new QWidget();
         page->setObjectName("page");
@@ -89,29 +89,29 @@ public:
         className_txt->setGeometry(QRect(501, 420, 141, 24));
         classes_list_2 = new QListWidget(page);
         classes_list_2->setObjectName("classes_list_2");
-        classes_list_2->setGeometry(QRect(40, 80, 191, 331));
+        classes_list_2->setGeometry(QRect(50, 80, 191, 331));
         classes_list_2->setEditTriggers(QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
         names_list_2 = new QTextEdit(page);
         names_list_2->setObjectName("names_list_2");
-        names_list_2->setGeometry(QRect(240, 80, 191, 331));
+        names_list_2->setGeometry(QRect(250, 80, 191, 331));
         label = new QLabel(page);
         label->setObjectName("label");
-        label->setGeometry(QRect(40, 60, 49, 16));
+        label->setGeometry(QRect(50, 60, 49, 16));
         label_5 = new QLabel(page);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(240, 60, 49, 16));
+        label_5->setGeometry(QRect(250, 60, 49, 16));
         saveChanges_btn = new QPushButton(page);
         saveChanges_btn->setObjectName("saveChanges_btn");
-        saveChanges_btn->setGeometry(QRect(340, 420, 91, 24));
+        saveChanges_btn->setGeometry(QRect(350, 420, 91, 24));
         removeClass_btn = new QPushButton(page);
         removeClass_btn->setObjectName("removeClass_btn");
-        removeClass_btn->setGeometry(QRect(39, 420, 191, 24));
+        removeClass_btn->setGeometry(QRect(49, 420, 191, 24));
         groupBox = new QGroupBox(page);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(490, 20, 301, 441));
         groupBox_2 = new QGroupBox(page);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(30, 20, 411, 441));
+        groupBox_2->setGeometry(QRect(40, 20, 411, 441));
         stackedWidget->addWidget(page);
         groupBox->raise();
         groupBox_2->raise();
@@ -130,25 +130,25 @@ public:
         page_2->setObjectName("page_2");
         classes_list = new QListWidget(page_2);
         classes_list->setObjectName("classes_list");
-        classes_list->setGeometry(QRect(30, 60, 191, 331));
+        classes_list->setGeometry(QRect(110, 70, 191, 331));
         classes_list->setEditTriggers(QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
         label_2 = new QLabel(page_2);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(40, 30, 61, 21));
+        label_2->setGeometry(QRect(110, 50, 61, 21));
         spinBox = new QSpinBox(page_2);
         spinBox->setObjectName("spinBox");
-        spinBox->setGeometry(QRect(40, 420, 71, 51));
+        spinBox->setGeometry(QRect(120, 430, 71, 51));
         label_4 = new QLabel(page_2);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(40, 400, 71, 16));
+        label_4->setGeometry(QRect(120, 410, 71, 16));
         groupsTable_tbl = new QTableWidget(page_2);
         groupsTable_tbl->setObjectName("groupsTable_tbl");
-        groupsTable_tbl->setGeometry(QRect(320, 30, 471, 491));
+        groupsTable_tbl->setGeometry(QRect(470, 30, 221, 511));
         groupsTable_tbl->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         groupsTable_tbl->horizontalHeader()->setVisible(false);
         makeGroups_btn = new QPushButton(page_2);
         makeGroups_btn->setObjectName("makeGroups_btn");
-        makeGroups_btn->setGeometry(QRect(130, 420, 91, 51));
+        makeGroups_btn->setGeometry(QRect(210, 430, 91, 51));
         stackedWidget->addWidget(page_2);
         groups_btn = new QPushButton(centralwidget);
         groups_btn->setObjectName("groups_btn");
@@ -159,7 +159,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 775, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -175,7 +175,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Group Manager", nullptr));
         clear_btn->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
         enter_btn->setText(QCoreApplication::translate("MainWindow", "Strip Formatting", nullptr));
         save_btn->setText(QCoreApplication::translate("MainWindow", "Save New Class", nullptr));
