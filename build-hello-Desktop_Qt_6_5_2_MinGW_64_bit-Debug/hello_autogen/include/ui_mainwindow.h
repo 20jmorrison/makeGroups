@@ -42,6 +42,7 @@ public:
     QLabel *label;
     QLabel *label_5;
     QPushButton *saveChanges_btn;
+    QPushButton *removeClass_btn;
     QWidget *page_2;
     QListWidget *classes_list;
     QLabel *label_2;
@@ -98,6 +99,9 @@ public:
         saveChanges_btn = new QPushButton(page);
         saveChanges_btn->setObjectName("saveChanges_btn");
         saveChanges_btn->setGeometry(QRect(320, 420, 91, 24));
+        removeClass_btn = new QPushButton(page);
+        removeClass_btn->setObjectName("removeClass_btn");
+        removeClass_btn->setGeometry(QRect(19, 420, 191, 24));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
@@ -153,6 +157,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Classes", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Names", nullptr));
         saveChanges_btn->setText(QCoreApplication::translate("MainWindow", "Save Changes", nullptr));
+        removeClass_btn->setText(QCoreApplication::translate("MainWindow", "Remove Class", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Select Class", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Names on File", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "# Groups", nullptr));

@@ -24,9 +24,11 @@ public slots:
     void displayNames();
     void displayNamesInEditor();
     void saveChanges();
+    void removeClass();
 
 private:
     Ui::MainWindow *ui;
+    void refreshLists();
 
 
 };
