@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->manageClasses_btn, SIGNAL(clicked()), this, SLOT(manageClasses()));
     connect(ui->groups_btn, SIGNAL(clicked()), this, SLOT(groups()));
     connect(ui->save_btn, SIGNAL(clicked()), this, SLOT(save()));
-    connect(ui->classes_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNames()));
     connect(ui->classes_list_2, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNamesInEditor()));
     connect(ui->saveChanges_btn, SIGNAL(clicked()), this, SLOT(saveChanges()));
     connect(ui->removeClass_btn, SIGNAL(clicked()), this, SLOT(removeClass()));
@@ -30,6 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->className_txt->setPlaceholderText("Enter Class Name...");
     ui->inputText_txt->setPlaceholderText("Paste Classlist Here...");
+
+    ui->groupsTable_tbl->setRowCount(3);
+    ui->groupsTable_tbl->setColumnCount(5);
 }
 
 MainWindow::~MainWindow()
@@ -88,20 +90,6 @@ void MainWindow::save(){
     clear();
 }
 
-void MainWindow::displayNames(){
-    QString className = ui->classes_list->currentItem()->text();
-    QString projectDir = QCoreApplication::applicationDirPath();
-    QString classesDir = projectDir + "/Classes/" + className + ".txt";
-    QFile file(classesDir);
-    QTextStream in(&file);
-
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-
-    QString fileContent = in.readAll();
-    ui->names_list->setPlainText(fileContent);
-
-    file.close();
-}
 
 void MainWindow::displayNamesInEditor(){
     QString className = ui->classes_list_2->currentItem()->text();

@@ -45,14 +45,13 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "manageClasses",
     "groups",
     "save",
-    "displayNames",
     "displayNamesInEditor",
     "saveChanges",
     "removeClass"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[22];
+    uint offsetsAndSizes[20];
     char stringdata0[11];
     char stringdata1[6];
     char stringdata2[1];
@@ -60,10 +59,9 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata4[14];
     char stringdata5[7];
     char stringdata6[5];
-    char stringdata7[13];
-    char stringdata8[21];
+    char stringdata7[21];
+    char stringdata8[12];
     char stringdata9[12];
-    char stringdata10[12];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -76,10 +74,9 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(24, 13),  // "manageClasses"
         QT_MOC_LITERAL(38, 6),  // "groups"
         QT_MOC_LITERAL(45, 4),  // "save"
-        QT_MOC_LITERAL(50, 12),  // "displayNames"
-        QT_MOC_LITERAL(63, 20),  // "displayNamesInEditor"
-        QT_MOC_LITERAL(84, 11),  // "saveChanges"
-        QT_MOC_LITERAL(96, 11)   // "removeClass"
+        QT_MOC_LITERAL(50, 20),  // "displayNamesInEditor"
+        QT_MOC_LITERAL(71, 11),  // "saveChanges"
+        QT_MOC_LITERAL(83, 11)   // "removeClass"
     },
     "MainWindow",
     "clear",
@@ -88,7 +85,6 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "manageClasses",
     "groups",
     "save",
-    "displayNames",
     "displayNamesInEditor",
     "saveChanges",
     "removeClass"
@@ -103,7 +99,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -111,18 +107,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x0a,    1 /* Public */,
-       3,    0,   69,    2, 0x0a,    2 /* Public */,
-       4,    0,   70,    2, 0x0a,    3 /* Public */,
-       5,    0,   71,    2, 0x0a,    4 /* Public */,
-       6,    0,   72,    2, 0x0a,    5 /* Public */,
-       7,    0,   73,    2, 0x0a,    6 /* Public */,
-       8,    0,   74,    2, 0x0a,    7 /* Public */,
-       9,    0,   75,    2, 0x0a,    8 /* Public */,
-      10,    0,   76,    2, 0x0a,    9 /* Public */,
+       1,    0,   62,    2, 0x0a,    1 /* Public */,
+       3,    0,   63,    2, 0x0a,    2 /* Public */,
+       4,    0,   64,    2, 0x0a,    3 /* Public */,
+       5,    0,   65,    2, 0x0a,    4 /* Public */,
+       6,    0,   66,    2, 0x0a,    5 /* Public */,
+       7,    0,   67,    2, 0x0a,    6 /* Public */,
+       8,    0,   68,    2, 0x0a,    7 /* Public */,
+       9,    0,   69,    2, 0x0a,    8 /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -154,8 +148,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'save'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'displayNames'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'displayNamesInEditor'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'saveChanges'
@@ -177,10 +169,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->manageClasses(); break;
         case 3: _t->groups(); break;
         case 4: _t->save(); break;
-        case 5: _t->displayNames(); break;
-        case 6: _t->displayNamesInEditor(); break;
-        case 7: _t->saveChanges(); break;
-        case 8: _t->removeClass(); break;
+        case 5: _t->displayNamesInEditor(); break;
+        case 6: _t->saveChanges(); break;
+        case 7: _t->removeClass(); break;
         default: ;
         }
     }
@@ -206,13 +197,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 8;
     }
     return _id;
 }

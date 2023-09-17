@@ -21,7 +21,6 @@ public slots:
     void manageClasses();
     void groups();
     void save();
-    void displayNames();
     void displayNamesInEditor();
     void saveChanges();
     void removeClass();
