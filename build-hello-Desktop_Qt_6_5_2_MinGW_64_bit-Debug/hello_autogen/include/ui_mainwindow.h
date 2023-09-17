@@ -53,7 +53,7 @@ public:
     QSpinBox *spinBox;
     QLabel *label_4;
     QTableWidget *groupsTable_tbl;
-    QPushButton *pushButton;
+    QPushButton *makeGroups_btn;
     QPushButton *groups_btn;
     QPushButton *manageClasses_btn;
     QMenuBar *menubar;
@@ -144,9 +144,9 @@ public:
         groupsTable_tbl = new QTableWidget(page_2);
         groupsTable_tbl->setObjectName("groupsTable_tbl");
         groupsTable_tbl->setGeometry(QRect(320, 30, 471, 491));
-        pushButton = new QPushButton(page_2);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(130, 420, 91, 51));
+        makeGroups_btn = new QPushButton(page_2);
+        makeGroups_btn->setObjectName("makeGroups_btn");
+        makeGroups_btn->setGeometry(QRect(130, 420, 91, 51));
         stackedWidget->addWidget(page_2);
         groups_btn = new QPushButton(centralwidget);
         groups_btn->setObjectName("groups_btn");
@@ -185,7 +185,7 @@ public:
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Class Editor", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Select Class", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "# Groups", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Make Groups", nullptr));
+        makeGroups_btn->setText(QCoreApplication::translate("MainWindow", "Make Groups", nullptr));
         groups_btn->setText(QCoreApplication::translate("MainWindow", "Groups", nullptr));
         manageClasses_btn->setText(QCoreApplication::translate("MainWindow", "Manage Classes", nullptr));
     } // retranslateUi

@@ -24,6 +24,7 @@ public slots:
     void displayNamesInEditor();
     void saveChanges();
     void removeClass();
+    void makeGroups();
 
 private:
     Ui::MainWindow *ui;

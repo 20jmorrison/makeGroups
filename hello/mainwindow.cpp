@@ -24,14 +24,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->classes_list_2, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(displayNamesInEditor()));
     connect(ui->saveChanges_btn, SIGNAL(clicked()), this, SLOT(saveChanges()));
     connect(ui->removeClass_btn, SIGNAL(clicked()), this, SLOT(removeClass()));
+    connect(ui->makeGroups_btn, SIGNAL(clicked()), this, SLOT(makeGroups()));
 
     refreshLists();
 
     ui->className_txt->setPlaceholderText("Enter Class Name...");
     ui->inputText_txt->setPlaceholderText("Paste Classlist Here...");
 
-    ui->groupsTable_tbl->setRowCount(3);
-    ui->groupsTable_tbl->setColumnCount(5);
+    ui->groupsTable_tbl->setRowCount(15);
+    ui->groupsTable_tbl->setColumnCount(1);
 }
 
 MainWindow::~MainWindow()
@@ -145,5 +146,43 @@ void MainWindow::removeClass(){
     file.remove();
     refreshLists();
     ui->names_list_2->clear();
+
+}
+
+void MainWindow::makeGroups(){
+    ui->groupsTable_tbl->clear();
+    QString className = ui->classes_list->currentItem()->text();
+    QString projectDir = QCoreApplication::applicationDirPath();
+    QString classesDir = projectDir + "/Classes/" + className + ".txt";
+    QFile file(classesDir);
+    QTextStream in(&file);
+    QStringList nameList;
+    int numNames = 0;
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        nameList.append(line);
+        numNames++;
+    }
+
+    int numGroups = ui->spinBox->value();
+    int groupSize = numNames / numGroups;
+    int lastGroupSize = groupSize + (numNames % numGroups);
+    int currGroupSize;
+    for (int i = 0; i < numGroups; i++){
+        QString currGroup = "";
+        currGroupSize = (lastGroupSize != 0 && i == numGroups - 1) ? lastGroupSize : groupSize;
+        for (int j = 0; j < currGroupSize; j++){
+            currGroup += nameList[(i*groupSize) + j] + "\n";
+        }
+
+
+        QTableWidgetItem *item = new QTableWidgetItem(currGroup);
+        ui->groupsTable_tbl->setItem(i, 0, item);
+        ui->groupsTable_tbl->resizeRowToContents(i);
+    }
+
+
 
 }
