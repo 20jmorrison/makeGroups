@@ -144,6 +144,8 @@ public:
         groupsTable_tbl = new QTableWidget(page_2);
         groupsTable_tbl->setObjectName("groupsTable_tbl");
         groupsTable_tbl->setGeometry(QRect(320, 30, 471, 491));
+        groupsTable_tbl->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        groupsTable_tbl->horizontalHeader()->setVisible(false);
         makeGroups_btn = new QPushButton(page_2);
         makeGroups_btn->setObjectName("makeGroups_btn");
         makeGroups_btn->setGeometry(QRect(130, 420, 91, 51));

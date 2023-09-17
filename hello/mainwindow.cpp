@@ -157,32 +157,31 @@ void MainWindow::makeGroups(){
     QFile file(classesDir);
     QTextStream in(&file);
     QStringList nameList;
-    int numNames = 0;
+    int numPeople = 0;
     file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     while (!in.atEnd()) {
         QString line = in.readLine();
         nameList.append(line);
-        numNames++;
+        numPeople++;
     }
 
     int numGroups = ui->spinBox->value();
-    int groupSize = numNames / numGroups;
-    int lastGroupSize = groupSize + (numNames % numGroups);
+    int groupSize = numPeople / numGroups;
+    int numOversizedGroups = numPeople % numGroups;
     int currGroupSize;
+    int namesIndex = 0;
     for (int i = 0; i < numGroups; i++){
         QString currGroup = "";
-        currGroupSize = (lastGroupSize != 0 && i == numGroups - 1) ? lastGroupSize : groupSize;
+        currGroupSize = (i < numOversizedGroups) ? groupSize + 1 : groupSize;
         for (int j = 0; j < currGroupSize; j++){
-            currGroup += nameList[(i*groupSize) + j] + "\n";
+            currGroup += nameList[namesIndex] + "\n";
+            namesIndex++;
         }
-
-
         QTableWidgetItem *item = new QTableWidgetItem(currGroup);
         ui->groupsTable_tbl->setItem(i, 0, item);
         ui->groupsTable_tbl->resizeRowToContents(i);
     }
-
 
 
 }
