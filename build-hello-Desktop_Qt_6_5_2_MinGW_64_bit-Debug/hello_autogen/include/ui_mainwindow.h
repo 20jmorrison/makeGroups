@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -43,6 +44,8 @@ public:
     QLabel *label_5;
     QPushButton *saveChanges_btn;
     QPushButton *removeClass_btn;
+    QGroupBox *groupBox;
+    QGroupBox *groupBox_2;
     QWidget *page_2;
     QListWidget *classes_list;
     QLabel *label_2;
@@ -70,39 +73,58 @@ public:
         page->setObjectName("page");
         inputText_txt = new QTextEdit(page);
         inputText_txt->setObjectName("inputText_txt");
-        inputText_txt->setGeometry(QRect(520, 80, 281, 331));
+        inputText_txt->setGeometry(QRect(501, 80, 281, 331));
         clear_btn = new QPushButton(page);
         clear_btn->setObjectName("clear_btn");
-        clear_btn->setGeometry(QRect(520, 50, 80, 24));
+        clear_btn->setGeometry(QRect(501, 50, 80, 24));
         enter_btn = new QPushButton(page);
         enter_btn->setObjectName("enter_btn");
-        enter_btn->setGeometry(QRect(679, 50, 121, 24));
+        enter_btn->setGeometry(QRect(660, 50, 121, 24));
         save_btn = new QPushButton(page);
         save_btn->setObjectName("save_btn");
-        save_btn->setGeometry(QRect(679, 420, 121, 24));
+        save_btn->setGeometry(QRect(660, 420, 121, 24));
         className_txt = new QLineEdit(page);
         className_txt->setObjectName("className_txt");
-        className_txt->setGeometry(QRect(520, 420, 141, 24));
+        className_txt->setGeometry(QRect(501, 420, 141, 24));
         classes_list_2 = new QListWidget(page);
         classes_list_2->setObjectName("classes_list_2");
-        classes_list_2->setGeometry(QRect(20, 80, 191, 331));
+        classes_list_2->setGeometry(QRect(40, 80, 191, 331));
         classes_list_2->setEditTriggers(QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
         names_list_2 = new QTextEdit(page);
         names_list_2->setObjectName("names_list_2");
-        names_list_2->setGeometry(QRect(220, 80, 191, 331));
+        names_list_2->setGeometry(QRect(240, 80, 191, 331));
         label = new QLabel(page);
         label->setObjectName("label");
-        label->setGeometry(QRect(20, 60, 49, 16));
+        label->setGeometry(QRect(40, 60, 49, 16));
         label_5 = new QLabel(page);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(220, 60, 49, 16));
+        label_5->setGeometry(QRect(240, 60, 49, 16));
         saveChanges_btn = new QPushButton(page);
         saveChanges_btn->setObjectName("saveChanges_btn");
-        saveChanges_btn->setGeometry(QRect(320, 420, 91, 24));
+        saveChanges_btn->setGeometry(QRect(340, 420, 91, 24));
         removeClass_btn = new QPushButton(page);
         removeClass_btn->setObjectName("removeClass_btn");
-        removeClass_btn->setGeometry(QRect(19, 420, 191, 24));
+        removeClass_btn->setGeometry(QRect(39, 420, 191, 24));
+        groupBox = new QGroupBox(page);
+        groupBox->setObjectName("groupBox");
+        groupBox->setGeometry(QRect(490, 20, 301, 441));
+        groupBox_2 = new QGroupBox(page);
+        groupBox_2->setObjectName("groupBox_2");
+        groupBox_2->setGeometry(QRect(30, 20, 411, 441));
         stackedWidget->addWidget(page);
+        groupBox->raise();
+        groupBox_2->raise();
+        inputText_txt->raise();
+        clear_btn->raise();
+        enter_btn->raise();
+        save_btn->raise();
+        className_txt->raise();
+        classes_list_2->raise();
+        names_list_2->raise();
+        label->raise();
+        label_5->raise();
+        saveChanges_btn->raise();
+        removeClass_btn->raise();
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         classes_list = new QListWidget(page_2);
@@ -158,6 +180,8 @@ public:
         label_5->setText(QCoreApplication::translate("MainWindow", "Names", nullptr));
         saveChanges_btn->setText(QCoreApplication::translate("MainWindow", "Save Changes", nullptr));
         removeClass_btn->setText(QCoreApplication::translate("MainWindow", "Remove Class", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "Add Classes", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Class Editor", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Select Class", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Names on File", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "# Groups", nullptr));
