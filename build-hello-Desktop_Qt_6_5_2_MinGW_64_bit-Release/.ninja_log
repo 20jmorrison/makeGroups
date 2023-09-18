@@ -1,0 +1,39 @@
+# ninja log v5
+18	875	7166951757857055	hello_autogen/timestamp	4b3d36558e7004b3
+18	875	7166951757857055	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/timestamp	4b3d36558e7004b3
+878	2733	7166951778250067	CMakeFiles/hello.dir/main.cpp.obj	f3cd467500600b6e
+18	875	7166951757857055	hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+3930	4099	7166951791736713	hello.exe	29b349410074f051
+18	875	7166951757857055	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+875	2757	7166951778406280	CMakeFiles/hello.dir/hello_autogen/mocs_compilation.cpp.obj	80ba76eaa4b74a92
+882	3930	7166951790174579	CMakeFiles/hello.dir/mainwindow.cpp.obj	64f67b578673eea5
+18	46	0	CMakeFiles/clean.additional	321391b2684b2653
+46	88	0	clean	e8e407a994324ac6
+17	41	0	CMakeFiles/clean.additional	321391b2684b2653
+41	84	0	clean	e8e407a994324ac6
+18	856	7166953888591096	hello_autogen/timestamp	4b3d36558e7004b3
+18	856	7166953888591096	hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+18	856	7166953888591096	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/timestamp	4b3d36558e7004b3
+18	856	7166953888591096	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+860	2552	7166953907336706	CMakeFiles/hello.dir/main.cpp.obj	f3cd467500600b6e
+857	2624	7166953907961527	CMakeFiles/hello.dir/hello_autogen/mocs_compilation.cpp.obj	80ba76eaa4b74a92
+863	3712	7166953918896476	CMakeFiles/hello.dir/mainwindow.cpp.obj	64f67b578673eea5
+3712	3880	7166953920458592	hello.exe	29b349410074f051
+35	333	7167084747568398	hello_autogen/timestamp	4b3d36558e7004b3
+35	333	7167084747568398	hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+35	333	7167084747568398	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/timestamp	4b3d36558e7004b3
+35	333	7167084747568398	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+347	3587	7167084780060782	CMakeFiles/hello.dir/mainwindow.cpp.obj	64f67b578673eea5
+3588	3784	7167084781935343	hello.exe	29b349410074f051
+32	320	7167085116175001	hello_autogen/timestamp	4b3d36558e7004b3
+32	320	7167085116175001	hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+32	320	7167085116175001	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/timestamp	4b3d36558e7004b3
+32	320	7167085116175001	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+333	3347	7167085146523108	CMakeFiles/hello.dir/mainwindow.cpp.obj	64f67b578673eea5
+3347	3516	7167085148085235	hello.exe	29b349410074f051
+14	297	7167085958281460	hello_autogen/timestamp	4b3d36558e7004b3
+14	297	7167085958281460	hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+14	297	7167085958281460	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/timestamp	4b3d36558e7004b3
+14	297	7167085958281460	C:/Users/Jared Morrison/Desktop/qtHello/build-hello-Desktop_Qt_6_5_2_MinGW_64_bit-Release/hello_autogen/mocs_compilation.cpp	4b3d36558e7004b3
+310	2940	7167085984681499	CMakeFiles/hello.dir/mainwindow.cpp.obj	64f67b578673eea5
+2940	3109	7167085986399858	hello.exe	29b349410074f051

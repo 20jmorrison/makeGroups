@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>775</width>
-    <height>617</height>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,13 @@
     <property name="geometry">
      <rect>
       <x>-30</x>
-      <y>30</y>
+      <y>40</y>
       <width>821</width>
-      <height>631</height>
+      <height>621</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="currentIndex">
      <number>1</number>
@@ -34,7 +34,7 @@
       <property name="geometry">
        <rect>
         <x>501</x>
-        <y>80</y>
+        <y>90</y>
         <width>281</width>
         <height>331</height>
        </rect>
@@ -44,7 +44,7 @@
       <property name="geometry">
        <rect>
         <x>501</x>
-        <y>50</y>
+        <y>60</y>
         <width>80</width>
         <height>24</height>
        </rect>
@@ -57,7 +57,7 @@
       <property name="geometry">
        <rect>
         <x>660</x>
-        <y>50</y>
+        <y>60</y>
         <width>121</width>
         <height>24</height>
        </rect>
@@ -70,7 +70,7 @@
       <property name="geometry">
        <rect>
         <x>660</x>
-        <y>420</y>
+        <y>430</y>
         <width>121</width>
         <height>24</height>
        </rect>
@@ -83,7 +83,7 @@
       <property name="geometry">
        <rect>
         <x>501</x>
-        <y>420</y>
+        <y>430</y>
         <width>141</width>
         <height>24</height>
        </rect>
@@ -93,7 +93,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>80</y>
+        <y>90</y>
         <width>191</width>
         <height>331</height>
        </rect>
@@ -106,7 +106,7 @@
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>80</y>
+        <y>90</y>
         <width>191</width>
         <height>331</height>
        </rect>
@@ -116,7 +116,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>60</y>
+        <y>70</y>
         <width>49</width>
         <height>16</height>
        </rect>
@@ -129,7 +129,7 @@
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>60</y>
+        <y>70</y>
         <width>49</width>
         <height>16</height>
        </rect>
@@ -142,7 +142,7 @@
       <property name="geometry">
        <rect>
         <x>350</x>
-        <y>420</y>
+        <y>430</y>
         <width>91</width>
         <height>24</height>
        </rect>
@@ -155,7 +155,7 @@
       <property name="geometry">
        <rect>
         <x>49</x>
-        <y>420</y>
+        <y>430</y>
         <width>191</width>
         <height>24</height>
        </rect>
@@ -168,7 +168,7 @@
       <property name="geometry">
        <rect>
         <x>490</x>
-        <y>20</y>
+        <y>30</y>
         <width>301</width>
         <height>441</height>
        </rect>
@@ -181,7 +181,7 @@
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>20</y>
+        <y>30</y>
         <width>411</width>
         <height>441</height>
        </rect>
@@ -209,26 +209,13 @@
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>70</y>
+        <y>60</y>
         <width>191</width>
-        <height>331</height>
+        <height>341</height>
        </rect>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>50</y>
-        <width>61</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Select Class</string>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox">
@@ -239,6 +226,9 @@
         <width>71</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="value">
+       <number>2</number>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -257,10 +247,10 @@
      <widget class="QTableWidget" name="groupsTable_tbl">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>30</y>
-        <width>221</width>
-        <height>511</height>
+        <x>530</x>
+        <y>60</y>
+        <width>191</width>
+        <height>421</height>
        </rect>
       </property>
       <property name="sizeAdjustPolicy">
@@ -282,7 +272,69 @@
       <property name="text">
        <string>Make Groups</string>
       </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>20</y>
+        <width>211</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Class Select</string>
+      </property>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>40</y>
+         <width>231</width>
+         <height>481</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Class Select</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>20</y>
+        <width>211</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Generated Groups</string>
+      </property>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>40</y>
+         <width>231</width>
+         <height>481</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Class Select</string>
+       </property>
+      </widget>
+     </widget>
+     <zorder>groupBox_3</zorder>
+     <zorder>groupBox_5</zorder>
+     <zorder>classes_list</zorder>
+     <zorder>spinBox</zorder>
+     <zorder>label_4</zorder>
+     <zorder>groupsTable_tbl</zorder>
+     <zorder>makeGroups_btn</zorder>
     </widget>
    </widget>
    <widget class="QPushButton" name="groups_btn">
@@ -291,11 +343,20 @@
       <x>0</x>
       <y>0</y>
       <width>91</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Groups</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="manageClasses_btn">
@@ -304,13 +365,144 @@
       <x>90</x>
       <y>0</y>
       <width>91</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Manage Classes</string>
     </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
    </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>771</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="groupsBar">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>51</width>
+      <height>5</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="classesBar">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>30</y>
+      <width>51</width>
+      <height>5</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>170</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>groupsBar</zorder>
+   <zorder>stackedWidget</zorder>
+   <zorder>groups_btn</zorder>
+   <zorder>manageClasses_btn</zorder>
+   <zorder>line</zorder>
+   <zorder>classesBar</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

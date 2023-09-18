@@ -9,12 +9,36 @@
 #include <iomanip>
 #include <QDir>
 #include <stdio.h>
-
+#include <QStyleFactory>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    qApp->setStyle(QStyleFactory::create("Fusion"));
+
+    QPalette lightPalette;
+    lightPalette.setColor(QPalette::Window, QColor(220, 220, 220));             // Background color
+    lightPalette.setColor(QPalette::WindowText, QColor(9, 38, 66));            // Text color
+    lightPalette.setColor(QPalette::Base, QColor(255, 255, 255));              // Base color
+    lightPalette.setColor(QPalette::AlternateBase, QColor(173, 216, 255));     // Alternate background color
+    lightPalette.setColor(QPalette::ToolTipBase, QColor(255, 255, 255));       // Tooltip background color
+    lightPalette.setColor(QPalette::ToolTipText, QColor(9, 38, 66));           // Tooltip text color
+    lightPalette.setColor(QPalette::Text, QColor(9, 38, 66));                  // Text color
+    lightPalette.setColor(QPalette::Button, QColor(200, 200, 200));            // Button color
+    lightPalette.setColor(QPalette::ButtonText, QColor(9, 38, 66));            // Button text color
+    lightPalette.setColor(QPalette::BrightText, QColor(255, 0, 0));            // Bright text color
+    lightPalette.setColor(QPalette::Link, QColor(35, 90, 159));                // Link color
+
+    lightPalette.setColor(QPalette::Highlight, QColor(23, 66, 118));           // Highlight color
+    lightPalette.setColor(QPalette::HighlightedText, QColor(255, 255, 255));  // Highlighted text color
+
+    qApp->setPalette(lightPalette);
+
+    qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
+
+
+
     ui->setupUi(this);
     connect(ui->clear_btn, SIGNAL(clicked()), this, SLOT(clear()));
     connect(ui->enter_btn, SIGNAL(clicked()), this, SLOT(enter()));
@@ -33,6 +57,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->groupsTable_tbl->setRowCount(0);
     ui->groupsTable_tbl->setColumnCount(1);
+    ui->classesBar->setVisible(false);
+    ui->groupsBar->setVisible(true);
 }
 
 MainWindow::~MainWindow()
@@ -68,14 +94,17 @@ void MainWindow::enter(){
 
 void MainWindow::manageClasses(){
     ui->stackedWidget->setCurrentIndex(0);
-    ui->manageClasses_btn->setStyleSheet("background-color: grey");
-    ui->groups_btn->setStyleSheet("");
+    ui->classesBar->setVisible(true);
+    ui->groupsBar->setVisible(false);
+
+
 }
 
 void MainWindow::groups(){
     ui->stackedWidget->setCurrentIndex(1);
     ui->manageClasses_btn->setStyleSheet("");
-    ui->groups_btn->setStyleSheet("background-color: grey");
+    ui->classesBar->setVisible(false);
+    ui->groupsBar->setVisible(true);
 
 }
 
